@@ -9,7 +9,11 @@ function deObjetoAmatriz(objeto){
       B: 2,
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
-  //Escribe tu código aquí
+  //Escribe tu código aquía
+    var array= Object.entries(objeto);
+
+    return array;
+
 }
 
 
@@ -18,14 +22,55 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
-}
+  
+
+  
+    let cont=["a","b","c","d","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    let array=[];
+    let i=0;
+    let x=0;
+    
+      
+    while(i < cont.length){
+      let con=0;
+      if(con==0){
+      for (let j=0;j<string.length; j++){
+        if (string.indexOf(cont[i],j) > 0){
+          con+=1;
+          }
+        }
+      }
+      if(con>0){
+          array[i]= "{"+ cont[i] +":"+" "+con +",";
+          con=0;
+      }
+      i++;
+
+
+    }
+    
+    return array;
+  }
 
 
 function capToFront(s) {
   //Realiza una función que reciba como parámetro un string y mueva todas las letras mayúsculas
-  //al principio de la palabra.
+  //al principio )de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  
+   var sp =s.split("");
+   var caps=[];
+   var lower=[];
+   for(let i=0;i < sp.length;i ++){
+     if(sp[i]==sp[i].toUpperCase()){
+       caps.push(sp[i]);
+     }
+     if(sp[i]==sp[i].toLowerCase()){
+       lower.push(sp[i]);
+     }
+   }
+   return caps.join("").concat(lower.join(""));
 }
 
 
